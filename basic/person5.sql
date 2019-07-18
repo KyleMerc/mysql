@@ -1,1 +1,1 @@
-DELETE FROM persons WHERE address LIKE "%usa%";
+DELETE FROM persons WHERE address LIKE "%philippines%";
