@@ -1,5 +1,6 @@
 SELECT DISTINCT employeeNumber, CONCAT(firstName, ' ', lastName) AS employeeName, COUNT(c.customerNumber) AS customerCount
-FROM employees e, customers c
-WHERE jobTitle = 'Sales Rep' AND c.salesRepEmployeeNumber = e.employeeNumber
+FROM employees e
+LEFT JOIN customers c ON c.salesRepEmployeeNumber = e.employeeNumber 
+WHERE jobTitle = 'Sales Rep'
 GROUP BY employeeNumber
 ORDER BY customerCount DESC;
